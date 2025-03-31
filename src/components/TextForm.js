@@ -59,19 +59,19 @@ export default function TextForm(props) {
               placeholder="Enter text here..."
             ></textarea>
           </div>
-          <button className="btn btn-success mx-1 my-1" onClick={handleUpClick}>
+          <button disabled={text.length===0} className="btn btn-success mx-1 my-1" onClick={handleUpClick}>
             UPPER CASE
           </button>
-          <button className="btn btn-success mx-1 my-1" onClick={handleLoClick}>
+          <button disabled={text.length===0} className="btn btn-success mx-1 my-1" onClick={handleLoClick}>
             lower case
           </button>
-          <button className="btn btn-success mx-1 my-1" onClick={handleSentenceCase}>
+          <button disabled={text.length===0} className="btn btn-success mx-1 my-1" onClick={handleSentenceCase}>
             Sentence case
           </button>
-          <button className="btn btn-success mx-1 my-1" onClick={removeExtraSpaces}>
+          <button disabled={text.length===0} className="btn btn-success mx-1 my-1" onClick={removeExtraSpaces}>
             Remove Extra Spaces
           </button>
-          <button className="btn btn-success mx-1 my-1" onClick={handleClearText}>
+          <button disabled={text.length===0} className="btn btn-success mx-1 my-1" onClick={handleClearText}>
             Clear Text
           </button>
         </div>
@@ -91,8 +91,8 @@ export default function TextForm(props) {
               }}
               placeholder="Result..."
             ></textarea>
-            <button
-              className="btn btn-success my-1"
+            <button disabled={text.length===0}
+              className="btn btn-success mx-1 my-1"
               onClick={() => {
                 navigator.clipboard.writeText(newText);
                 showAlertBox("Copied to clipboard!", {
@@ -105,7 +105,7 @@ export default function TextForm(props) {
               Copy Text
             </button>
             <button
-              className="btn btn-success mx-1"
+              className="btn btn-success mx-1 my-1"
               onClick={() => {
                 navigator.clipboard.readText().then((clipboardText) => {
                   setText(clipboardText);

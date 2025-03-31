@@ -5,7 +5,9 @@ function captalize(word){
 }
 function Alert(props) {
   return (
-   props.alert && <div
+    <div style={{ height: "50px" }}>
+    
+   {props.alert && <div
       className={`alert alert-${props.alert.type} alert-dismissible fade show`}
       role="alert"
     >
@@ -16,6 +18,7 @@ function Alert(props) {
         data-bs-dismiss="alert"
         aria-label="Close"
       ></button>
+    </div>}
     </div>
   );
 }
